@@ -1,7 +1,4 @@
 .container {
-  position: absolute;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -75,6 +72,7 @@
 
 .splash-signup-btn:hover {
   color: #888888;
+  cursor: pointer;
 }
 
 @keyframes splashBg{

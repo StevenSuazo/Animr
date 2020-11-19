@@ -19,10 +19,10 @@ const mSTP = (state, ownProps) => {
   });
 };
 
-const mdtp = dispatch => {
+const mDTP = dispatch => {
   return ({
     login: (user) => dispatch(login(user))
   });
 };
 
-export default connect(mSTP, mdtp)(DemoLogIn)
+export default connect(mSTP, mDTP)(DemoLogIn)

@@ -1,17 +1,32 @@
 import React from 'react';
-import NavBarIn from './navbar_in';
-import NavBarOut from './navbar_out';
+import { connect } from 'react-redux';
+import { logout } from "../actions/session_actions";
+// import { withRouter } from 'react-router-dom';
+import NavBar from './navbar';
 
-const Navbar = props => {
-  const { currentUser, logout, history } = props;
+// const Navbar = props => {
+//   const { currentUser, logout, history } = props;
 
-  const handleLogout = () => {
-    logout();
-  };
+//   const handleLogout = () => {
+//     logout();
+//     history.push("/");
+//   };
 
-  return currentUser ? <NavBarIn id={currentUser.id} handleLogout={handleLogout} /> : <NavBarOut />
+//   return currentUser ? <NavBarIn id={currentUser.id} handleLogout={handleLogout} /> : <NavBarOut />
+// };
+
+const mstp = ({ session, entities: { users } }) => {
+  return ({
+    currentUser: users[session.id],
+    // history: ownProps.history
+  });
 };
 
+const mdtp = (dispatch) => {
+  return ({
+    logout: () => dispatch(logout())
+  });
+};
 
-export default Navbar;
+export default connect(mstp, mdtp)(NavBar);
 
