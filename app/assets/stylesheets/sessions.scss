@@ -10,164 +10,76 @@
 }
 
 .login-form-container {
-  margin: 0px 0px 8px 0px;
-  width: 270px;
-  height: 300px;
-  // border: 1px solid #898989;
+  width: 325px;
+  height: 350px;
+  border: 1px solid #898989;
   border-radius: 5px;
   background-color: white;
   box-sizing: border-box;
-  padding: 16px;
+  padding: 1px;
   color: #898989;
   font-size: 16px;
 }
 
-// .session-forms, .form-section, .username-input, .password-input, .form-submit-button, .form-h1, .form-h2, .form-sign-up-link, .dots {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
+.signup-form-container {
+  width: 325px;
+  height: 450px;
+  border: 1px solid #898989;
+  border-radius: 5px;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 1px;
+  color: #898989;
+  font-size: 16px;
+}
 
-// .session-forms-container {
-//   margin-bottom: 50px;
-//   margin-left: 25px;
-//   margin-right: 25px;
-//   padding: 25px;
-//   padding-top: 40px;
-//   padding-bottom: 40px;
-//   background-color: white;
-//   border-radius: 6px;
-//   box-shadow: 0px 2px 10px -4px black; ;
-// }
+.login-input {
+  margin: 0px 0px 8px 0px;
+  width: 270px;
+  height: 55px;
+  border: 1px solid #898989;
+  border-radius: 5px;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 10px;
+  color: black;
+  font-size: 16px;
+}
 
-// .form-input {
-//   border: 1px solid #A7A7A7;
-//   font-size: 15px;
-//   padding-left: 20px;
-//   padding-right: 20px;
-//   width: 250px;
-//   height: 56px;
-//   margin-bottom: 10px; //here
-//   border-radius: 4px;
-// }
+.login-form-box > p {
+  margin-bottom: 0px;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+}
 
-// .username-input, .password-input, .form-submit-button {
-//   border-radius: 4px;
-//   transition: ease .3s;
-// }
+.session-submit{
+  width: 270px;
+  height: 40px;
+  background-color: #128fdc;
+  padding: 8px 24px 8px 24px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font: Helvetica;
+  font-size: 14.5px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-// .login-button, .demo-button {
-//   width: 290px;
-//   height: 40px;
-//   margin: 5px 0px;
-//   // margin-bottom: 10px;
-// }
+.session-submit:hover {
+  background-color: rgb(0, 132, 211);
+}
 
-// .demo-button {
-//   margin-bottom: 2px;
-// }
+.signup-q {
+  color: black;
+}
 
-// .form-input::placeholder {
-//   position: relative;
-//   color: #C3C3C3;
-//   top: 0px;
-//   bottom: 0;
-//   left: 0;
-//   right: 0;
-//   width: auto;
-//   height: auto;
-//   transition: ease .2s;
-// }
+.login-q {
+  color: black;
+}
 
-// .form-input:focus {
-//   outline-color: #008ED9;
-//   box-shadow: inset 0px 0px 0px 1.5px #008ED9;
-//   outline: none;
-//   border: 1px solid #008ED9;
-// }
-
-// .form-input:focus::placeholder {
-//   color: #008ED9;
-//   width: 50%;
-//   font-size: 11px;
-//   top: -12px;
-// }
-
-// .form-submit-button:focus {
-//   outline: none;
-//   transition: ease .3s;
-// }
-
-// .form-submit-button:hover {
-//   background-color: #1397E8;
-//   cursor: pointer;
-// }
-
-// .form-submit-button:active {
-//   background-color: #0E76B4;
-//   cursor: pointer;
-// }
-
-// .form-h1, .form-h2, .form-sign-up-link, .login-errors{
-//   font-family: helvetica neue;
-//   letter-spacing: 0.3px;
-// }
-// .form-h1{
-//   color: #343434;
-//   font-size: 22px;
-//   margin-top: 10px;
-//   margin-bottom: 45px;
-// }
-
-// .form-h2, .form-sign-up-link {
-//   font-size: 13px;
-// }
-
-// .form-h2 {
-//   margin-top: 20px;
-//   margin-bottom: 10px;
-// }
-// // dots
-
-// .dots{
-//   margin-bottom: 25px;
-//   margin-top: 15px;
-// }
-// .dot-1 {
-//   color: #0063DC;
-//   font-size: 25px;
-// }
-
-// .dot-2 {
-//   color: #FF0084;
-//   font-size: 25px;
-//   margin-left: -1px;
-// }
-
-// .form-sign-up-link {
-//   color: #008ED9;
-//   text-decoration: none;
-// }
-
-// // errors
-
-// .login-errors {
-//   // height: 10px;
-//   color: #E4262A;
-//   font-size: 12px;
-//   letter-spacing: 0.5px;
-//   margin-top: 10px;
-//   margin-bottom: 15px;
-// }
-
-// .col-flex {
-//   display: flex;
-//   flex-direction: column;
-
-// }
-
-// .sign-up-custom {
-//   height: 40px;
-//   margin: 5px 0px;
-// }
-
+.Logo {
+  background-image: image-url('logo.png');
+}

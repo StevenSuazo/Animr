@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom"
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -38,39 +39,37 @@ class SignUpForm extends React.Component {
     return (
       <>
         <div className="session-wrap">
-          <div className="login-form-container">
+          <div className="signup-form-container">
             <form onSubmit={this.handleSubmit} className="login-form-box">
-              Welcome to Animr!
               <br />
-              Please {this.props.formType} or {this.props.navLink}
-              {this.renderErrors()}
+              <p>Sign up for Animr!</p> 
               <div className="login-form">
                 <br />
-                <label>Email:
                   <input type="text"
                     value={this.state.email}
+                    placeholder='Email' 
                     onChange={this.update('email')}
                     className="login-input"
                   />
-                </label>
                 <br />
-                <label>Username:
                   <input type="text"
                     value={this.state.username}
+                    placeholder='Username' 
                     onChange={this.update('username')}
                     className="login-input"
                   />
-                </label>
                 <br />
-                <label>Password:
                   <input type="password"
                     value={this.state.password}
+                    placeholder='Password' 
                     onChange={this.update('password')}
                     className="login-input"
                   />
-                </label>
                 <br />
                 <input className="session-submit" type="submit" value={this.props.formType} />
+                <br/>
+                <div className="login-q">Already an Animr? <Link to="/login" >Log in here.</Link>
+                  {this.renderErrors()}</div>
               </div>
             </form>
           </div>
