@@ -43,10 +43,12 @@ class LogInForm extends React.Component {
           <div className="login-form-container">
             <form onSubmit={this.handleSubmit} className="login-form-box">
               <br/>
+              <img src="assets/logo.jpg" className="logo" />
               <p>Log in to Animr</p> 
               <div className="login-form">
                 <br />
                   <input type="text"
+                    autoFocus
                     value={this.state.username}
                     placeholder='Username' 
                     onChange={this.update('username')}

@@ -42,10 +42,12 @@ class SignUpForm extends React.Component {
           <div className="signup-form-container">
             <form onSubmit={this.handleSubmit} className="login-form-box">
               <br />
-              <p>Sign up for Animr!</p> 
+              <img src="assets/logo.jpg" className="logo"/>
+              <p>Sign up for Animr</p> 
               <div className="login-form">
                 <br />
                   <input type="text"
+                    autoFocus
                     value={this.state.email}
                     placeholder='Email' 
                     onChange={this.update('email')}
