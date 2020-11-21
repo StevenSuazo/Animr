@@ -3,6 +3,8 @@ class User < ApplicationRecord
   validates :password_digest, :session_token, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
 
+  has_many :photos
+
   after_initialize :ensure_session_token 
   attr_reader :password
 

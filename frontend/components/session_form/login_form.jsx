@@ -1,3 +1,4 @@
+import { endsWith } from 'lodash';
 import React from 'react';
 import { Link } from "react-router-dom"
 // import { logo } from '../../../app/assets/images/logo.png';
@@ -8,8 +9,10 @@ class LogInForm extends React.Component {
     this.state = {
       username: '',
       password: '',
+      visibility: "visibility",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.toggleHidePass = this.toggleHidePass.bind(this);
   }
 
   update(field) {
@@ -36,6 +39,18 @@ class LogInForm extends React.Component {
     );
   }
 
+  toggleHidePass(event) {
+    event.preventDefault();
+    let pass = document.getElementsByClassName('pinput');
+    if (pass[0].type === "text") {
+      pass[0].type = "password";
+      this.setState({ visibility: "visibility" })
+    } else {
+      pass[0].type = "text";
+      this.setState({ visibility: "visibility_off" })
+    }
+  }
+
   render() {
     return (
       <>
@@ -55,17 +70,25 @@ class LogInForm extends React.Component {
                     className="login-input"
                   />
                 <br />
+                <div className="password-outer">
+                <div className="password">
                   <input type="password"
                     value={this.state.password}
                     placeholder='Password' 
                     onChange={this.update('password')}
-                    className="login-input"
+                    className="pinput"
                   />
-                <br />
+                  <div
+                    className="visibility"
+                    onClick={this.toggleHidePass}>
+                    <i className="material-icons">{this.state.visibility}</i>
+                  </div>
+                </div>
+                </div>
                 <input className="session-submit" type="submit" value={this.props.formType} />
-                <br />
+                <div>{this.renderErrors()}</div>
                 <div className="signup-q">Not yet an Animr? <Link to="/signup" >Sign up here.</Link>
-                  {this.renderErrors()}</div>
+                </div>
               </div>
             </form>
           </div>

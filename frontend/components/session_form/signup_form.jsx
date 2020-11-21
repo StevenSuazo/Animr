@@ -8,8 +8,10 @@ class SignUpForm extends React.Component {
       username: '',
       password: '',
       email: '',
+      visibility: "visibility",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.toggleHidePass = this.toggleHidePass.bind(this);
   }
 
   update(field) {
@@ -35,6 +37,19 @@ class SignUpForm extends React.Component {
       </ul>
     );
   }
+
+  toggleHidePass(event) {
+    event.preventDefault();
+    let pass = document.getElementsByClassName('pinput');
+    if (pass[0].type === "text") {
+      pass[0].type = "password";
+      this.setState({ visibility: "visibility" })
+    } else {
+      pass[0].type = "text";
+      this.setState({ visibility: "visibility_off" })
+    }
+  }
+
   render() {
     return (
       <>
@@ -61,12 +76,21 @@ class SignUpForm extends React.Component {
                     className="login-input"
                   />
                 <br />
-                  <input type="password"
-                    value={this.state.password}
-                    placeholder='Password' 
-                    onChange={this.update('password')}
-                    className="login-input"
-                  />
+                <div className="password-outer">
+                  <div className="password">
+                    <input type="password"
+                      value={this.state.password}
+                      placeholder='Password'
+                      onChange={this.update('password')}
+                      className="pinput"
+                    />
+                    <div
+                      className="visibility"
+                      onClick={this.toggleHidePass}>
+                      <i className="material-icons">{this.state.visibility}</i>
+                    </div>
+                  </div>
+                </div>
                 <br />
                 <input className="session-submit" type="submit" value={this.props.formType} />
                 <br/>
