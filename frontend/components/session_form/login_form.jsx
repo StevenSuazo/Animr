@@ -59,7 +59,7 @@ class LogInForm extends React.Component {
           <div className="login-form-container">
             <form onSubmit={this.handleSubmit} className="login-form-box">
               <br/>
-              <img src={logo} className="logo" />
+              <img src={window.logo} className="logo" />
               <p>Log in to Animr</p> 
               <div className="login-form">
                 <br />
