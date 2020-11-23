@@ -52,13 +52,14 @@ class LogInForm extends React.Component {
   }
 
   render() {
+    const logo = window.logo;
     return (
       <>
         <div className="session-wrap">
           <div className="login-form-container">
             <form onSubmit={this.handleSubmit} className="login-form-box">
               <br/>
-              <img src="assets/logo.jpg" className="logo" />
+              <img src={logo} className="logo" />
               <p>Log in to Animr</p> 
               <div className="login-form">
                 <br />

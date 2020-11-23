@@ -11,26 +11,25 @@ class photoIndex extends React.Component {
   }
 
   render() {
-    // if (this.props.photo === undefined) {
-    //   return <span>No photo yet!</span>;
-    // }
-    // return (
-    //   <h1>Explore page</h1>
-    // );
     
-    const photoLis = this.props.photos.map(photo => {
-      const user = this.props.users[photo.author_id];
-      return (
-        <div>
-          <img src="" alt=""/>
-          <li key={photo.id}>
-            {user.username}
-          </li>
-        </div>
-      )
-    });
+    return (
+      this.props.photos.length > 0 ?
 
-    return (<ul className="photo-list">{photoLis}</ul>);
+      (<img src={this.props.photos[0].pictureUrl} />) : "not working"
+    )
+    // const photoLis = this.props.photos.map(photo => {
+    //   const user = this.props.users[photo.user_id];
+    //   return (
+    //     <div>
+    //       <img src="" alt=""/>
+    //       <li key={photo.id}>
+    //         {user.username}
+    //       </li>
+    //     </div>
+    //   )
+    // });
+
+    // return (<ul className="photo-list">{photoLis}</ul>);
   }
 }
 

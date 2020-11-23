@@ -9,7 +9,7 @@ export const fetchPhoto = id => (
 export const fetchAllPhotos = () => {
   return $.ajax({
     method: "GET",
-    url: `/api/photos`
+    url: `api/photos`
   })
 }
 
