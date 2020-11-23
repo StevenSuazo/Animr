@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { login, signup } from '../../actions/session_actions';
+import { login } from '../../actions/session_actions';
 
 const DemoLogIn = ({ login }) => {
   let demoUser = { username: "Demo", password: "password" }

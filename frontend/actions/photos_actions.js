@@ -1,6 +1,7 @@
 import * as ApiUtil from '../util/photos_api_util';
 
 export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
+export const RECEIVE_ALL_PHOTOS = 'RECEIVE_ALL_PHOTOS';
 export const REMOVE_PHOTO = 'REMOVE_PHOTO';
 export const RECEIVE_PHOTO_ERRORS = 'RECEIVE_PHOTO_ERRORS';
 
@@ -8,6 +9,14 @@ export const receivePhoto = photo => ({
   type: RECEIVE_PHOTO,
   photo: photo,
 });
+
+export const receiveAllPhotos = ({ photos, users }) => {
+  return {
+  type: RECEIVE_ALL_PHOTOS,
+  photos: photos,
+  users: users
+  }
+};
 
 export const removePhoto = photo => ({
   type: REMOVE_PHOTO,
@@ -26,6 +35,14 @@ export const fetchPhoto = id => dispatch => {
       .fail(error => dispatch(receivePhotoErrors(error.responseJSON)))
   );
 };
+
+export const fetchAllPhotos = () => {
+  return (dispatch) => {
+    return ApiUtil.fetchAllPhotos().then(payload => {
+      return dispatch(receiveAllPhotos(payload));
+    })
+  }
+}
 
 export const createPhoto = photo => dispatch => {
   return (

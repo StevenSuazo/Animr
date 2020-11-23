@@ -1,16 +1,17 @@
 import { connect } from 'react-redux';
-import { fetchPhoto } from '../../../util/photos_api_util';
+import { fetchAllPhotos } from '../../../actions/photos_actions';
 import Explore from './explore';
 
-const mSTP = (state) => {
-  // return {
-  //   photo: Object.values(state.photo)
-  //   // users: state.users
-  // }
+const mSTP = state => {
+  return {
+    photos: Object.values(state.entities.photos)
+    // users: users
+  }
 };
 
+
 const mDTP = dispatch => ({
-  fetchPhoto: () => dispatch(fetchPhoto())
+  displayPhotos: (photos) => dispatch(fetchAllPhotos(photos))
 });
 
-export default connect(null, mDTP)(Explore);
+export default connect(mSTP, mDTP)(Explore);

@@ -6,28 +6,31 @@ class photoIndex extends React.Component {
     super(props);
   }
 
-  // componentDidMount() {
-  //   this.props.fetchPhoto();
-  // }
+  componentDidMount() {
+    this.props.displayPhotos()
+  }
 
   render() {
-    // if (this.props.photo.length === 0) {
+    // if (this.props.photo === undefined) {
     //   return <span>No photo yet!</span>;
     // }
-    return (
-      <h1>Explore page</h1>
-    );
+    // return (
+    //   <h1>Explore page</h1>
+    // );
     
-    // const photoLis = this.props.photo.map(photo => {
-    //   const author = this.props.users[photo.author_id];
-    //   return (
-    //     <li key={photo.id}>
-    //       {photo.body} - {author.username}
-    //     </li>
-    //   )
-    // });
+    const photoLis = this.props.photos.map(photo => {
+      const user = this.props.users[photo.author_id];
+      return (
+        <div>
+          <img src="" alt=""/>
+          <li key={photo.id}>
+            {user.username}
+          </li>
+        </div>
+      )
+    });
 
-    // return (<ul className="photo-list">{photoLis}</ul>);
+    return (<ul className="photo-list">{photoLis}</ul>);
   }
 }
 

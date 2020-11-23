@@ -4,7 +4,7 @@ import photosReducer from "./photos_reducers";
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
-  // photos: photosReducer
+  photos: photosReducer
 });
 
 export default entitiesReducer;
