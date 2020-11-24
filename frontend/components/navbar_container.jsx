@@ -4,17 +4,6 @@ import { logout } from "../actions/session_actions";
 // import { withRouter } from 'react-router-dom';
 import NavBar from './navbar';
 
-// const Navbar = props => {
-//   const { currentUser, logout, history } = props;
-
-//   const handleLogout = () => {
-//     logout();
-//     history.push("/");
-//   };
-
-//   return currentUser ? <NavBarIn id={currentUser.id} handleLogout={handleLogout} /> : <NavBarOut />
-// };
-
 const mstp = ({ session, entities: { users } }) => {
   return ({
     currentUser: users[session.id],

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NavBar = ({ currentUser, logout}) => {
+const NavBar = ({ currentUser, logout }) => {
   const NavBarIn = () => {
     return (
 
@@ -10,6 +10,9 @@ const NavBar = ({ currentUser, logout}) => {
           <div className="navbar-container-out">
             <div className="navbar-left">
               <Link to="/" className="logo">Animr</Link>
+            </div>
+            <div className="navbar-right-out">
+              <button className="logout-link" onClick={logout}>Log Out</button>
             </div>
           </div>
         </nav>
