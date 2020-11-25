@@ -29,6 +29,7 @@ export const receivePhotoErrors = errors => ({
 });
 
 export const fetchPhoto = id => dispatch => {
+  // debugger
   return (
     ApiUtil.fetchPhoto(id)
       .then(photo => dispatch(receivePhoto(photo)))

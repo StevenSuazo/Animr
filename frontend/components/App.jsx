@@ -5,6 +5,7 @@ import NavBar from './navbar_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 import ExploreContainer from './pages/explore/explore_container';
+import PhotoShowContainer from "./photos/photo_show_container";
 import { AuthRoute } from '../util/route_util';
 
 const App = () => (
@@ -14,6 +15,7 @@ const App = () => (
     </header>
     <Switch>
       <Route exact path="/explore" component={ExploreContainer} />
+`      <Route exact path="/photos/:photoId" component={PhotoShowContainer} />`
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <AuthRoute exact path="/" component={SplashContainer} />

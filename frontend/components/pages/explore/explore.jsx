@@ -12,10 +12,9 @@ class photoIndex extends React.Component {
 
   render() {
     // const { photos } = this.props;
-
+    // debugger
     return (
       <div className="main-photo-index-div">
-
         <div className="photos-container">
           <ul className="photos-ul">
             {
@@ -33,14 +32,17 @@ class photoIndex extends React.Component {
                   </div> */}
 
                   <ul className="inner-box">
-                    <img
-                      className="index-photo"
-                      src={photo.pictureUrl} />
+                    <Link className="index-photo-link" to={`/photos/${photo.id}`}>
+                      <img
+                        className="index-photo"
+                        src={photo.pictureUrl} />
+                    </Link>
                   </ul>
 
-                  <div className="photo-title-container">
+                  {/* <div className="photo-title-container">
                     <h2 className="photo-title">{photo.title}</h2>
-                  </div>
+                    <Link to={`/users/${props.user.id}/photos`}>{props.user.username}</Link>
+                  </div> */}
                 </div>
               )}
           </ul>
@@ -53,15 +55,3 @@ class photoIndex extends React.Component {
 
 export default photoIndex; 
 
-
-
-
-// const allPhotos = this.props.photos.map(photo => {
-//   return <img src={photo.pictureUrl} key={photo.id} />
-// })
-
-// return (
-//   <div>
-//     {allPhotos}
-//   </div>
-// )
