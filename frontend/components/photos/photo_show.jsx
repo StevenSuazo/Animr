@@ -32,22 +32,8 @@ class PhotoShow extends React.Component {
       }
     }
 
-  // componentDidMount() {
-  //   this.props.fetchPhoto(this.props.match.params.photoId);
-  //   window.scrollTo(0, 0);
-  // }
-
-  // editPhoto(e) {
-  //   const { title, description } = this.props.photo;
-  //   if (this.state.title !== title || this.state.description !== description) {
-  //     this.props.updatePhoto(this.props.match.params.photoId, {
-  //       photo: this.state,
-  //     });
-  //   }
-  // }
-
   render() {
-    const { currentUser, users, photo, comments, tags, openModal } = this.props;
+    const { currentUser, photo } = this.props;
     if (!this.props.users || !this.props.photo) return null;
     return (
       <div>

@@ -1,0 +1,21 @@
+.photo-display {
+  background-color: #212124;
+  width: 100%;
+  height: 80vh;
+  padding-top: 30px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-show {
+  max-height: 62vh;
+  max-width: 80%;
+  object-fit: cover;
+}
+
+.del-btn {
+  margin-top: 10px;
+}
