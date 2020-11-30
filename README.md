@@ -1,25 +1,3 @@
-# README
+[Animr](http://fullstack-animr.herokuapp.com/#/) is a clone of the popular website Flickr, an online photo management and sharing application. With Animr user are able to show off their favorite anime based photos to the world, view others photos, comment on other's photos and much more.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# Animr
