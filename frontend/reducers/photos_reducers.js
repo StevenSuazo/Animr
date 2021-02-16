@@ -1,24 +1,18 @@
-import { RECEIVE_PHOTO, RECEIVE_ALL_PHOTOS, REMOVE_PHOTO } from '../actions/photos_actions';
+import { RECEIVE_PHOTOS, RECEIVE_PHOTO, DELETE_PHOTO, REMOVE_PHOTOS} from '../actions/photos_actions';
 
 const photosReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
- 
-  let newState = {};
+  let newState = Object.assign({}, oldState);
   switch (action.type) {
-
+    case RECEIVE_PHOTOS:
+      return Object.assign(newState, action.photos);
     case RECEIVE_PHOTO:
-      const { photo } = action;
-      newState = Object.assign({}, oldState, photo);
+      return { [action.photo.id]: action.photo };
+    case DELETE_PHOTO:
+      delete newState[action.photoId];
       return newState;
-
-    case RECEIVE_ALL_PHOTOS:
-      return action.photos;
-
-    // case REMOVE_PHOTO:
-    //   let newState = Object.assign({}, state);
-    //   delete newState[action.photoId];
-    //   return newState;
-
+    case REMOVE_PHOTOS:
+      return {};
     default:
       return oldState;
   }

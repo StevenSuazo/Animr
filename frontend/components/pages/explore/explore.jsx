@@ -16,7 +16,7 @@ class photoIndex extends React.Component {
     return (
       <div className="main-photo-index-div">
         <div className="photos-container">
-          <ul className="photos-ul">
+        <ul className="photos-ul">
             {
               this.props.photos.map(photo =>
                 <div className="photo-box"
