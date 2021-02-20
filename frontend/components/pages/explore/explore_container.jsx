@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
-import { fetchPhotos } from '../../../actions/photos_actions';
+import { getPhotos } from '../../../actions/photos_actions';
+import { getUsers } from '../../../actions/user_actions'
+import { selectAllPhotos } from '../../../reducers/selectors'
 import Explore from './explore';
 
 // const mSTP = state => {
@@ -9,15 +11,17 @@ import Explore from './explore';
 //   }
 // };
 
-const mSTP = ({ session, entities: { photos } }) => {
-  return {
-    photos: Object.values(photos),
-    loggedIn: Boolean(session.id)
-  };
-};
-
-const mDTP = dispatch => ({
-  displayPhotos: (photos) => dispatch(fetchPhotos(photos))
+const mapStateToProps = state => ({
+  photos: selectAllPhotos(state),
+  users: state.entities.users
 });
 
-export default connect(mSTP, mDTP)(Explore);
+const mapDispatchToProps = dispatch => ({
+  getPhotos: () => dispatch(getPhotos()),
+  getUsers: () => dispatch(getUsers())
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Explore);

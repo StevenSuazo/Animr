@@ -1,3 +1,754 @@
-// Place all the styles related to the api/photos controller here.
+// Place all the styles related to the api/Photos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.explore-background {
+    background-color: rgba(243, 245, 246, 1);
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: -24px;
+    bottom: 0;
+}
+
+.user-background {
+    background-color: rgba(243, 245, 246, 1);
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+}
+
+.user-header {
+    background-size: cover;
+    background-position: 50%;
+    height: 250px;
+}
+
+.user-header-gradient {
+    background: linear-gradient(180deg,transparent 0,rgba(0,0,0,.03) 8%,rgba(0,0,0,.11) 21%,rgba(0,0,0,.61) 78%,rgba(0,0,0,.7) 95%,rgba(0,0,0,.7));
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.user-header-content {
+    width: 80%;
+    height: 120px;
+    color: white;
+
+    h1 {
+        font-size: 36px;
+        font-weight: 300;
+        margin-bottom: 13px;
+        margin-top: 21px;
+    }
+
+    .user-header-subcontent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 18px;
+            margin: 0;
+        }
+    }
+}
+
+
+.user-subheader {
+    background-color: white;
+    position: relative;
+    height: 49px;
+    top: 0px;
+    border-bottom: 1px solid hsla(0,0%,54%,.3);
+
+    .user-subheader-content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+
+        a {
+            color: rgba(64, 64, 64, 1);
+            transition: 0.2s;
+            text-decoration: none;
+            box-sizing: border-box;
+            height: 49px;
+            padding: 12px 20px;
+            border-bottom: 3px solid rgba(255, 255, 255, 1);
+            line-height: 25px;
+            margin: 0;
+            margin-right: 10px;
+        }
+
+        a:hover {
+            color: rgba(0, 0, 0, 1);
+            border-bottom: 3px solid  rgba(0, 145, 220, 1);
+        }
+
+        a.selected {
+            color: rgba(0, 0, 0, 1);
+            border-bottom: 3px solid  rgba(0, 145, 220, 1);
+        }
+    }
+}
+
+
+
+.photo-array {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1536px;
+}
+
+.photo-item {
+    padding: .1rem;
+    flex-grow: 1;
+    position: relative;
+}
+
+.photo-info {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(207, 214, 217, 1);
+
+    a {
+        text-decoration: none;
+        padding-left: 5px;
+        color: rgba(33, 33, 36, 1);
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    a:hover {
+        transition: color .15s ease-in-out;
+        text-decoration: underline;
+        color: rgba(00, 109, 172, 1);
+    }
+
+    .photo-details {
+        width: 418px;
+        height: 100%;
+        margin-top: 16px;
+
+        .photo-info-details, .photo-details-not-owner {
+            transition: 0.4s;
+            padding: 5px;
+            width: 418px;
+            height: 100%;
+
+            h3 {
+                color: rgba(33, 33, 36, 1);
+                font-size: 16px;
+                font-weight: 600;
+                width: 380px;
+                margin: 0;
+                margin-bottom: 16px;
+            }
+
+            p {
+                color: rgba(33, 33, 36, 1);
+                font-size: 14px;
+                font-weight: 400;
+                margin: 0;
+            }
+
+            svg {
+                transition: 0.2s;
+                display: none;
+                float: right;
+                color: rgba(143, 147, 150, 1);
+                width: 24px;
+                height: 24px;
+                opacity: 0.47;
+            }
+        }
+
+        .photo-info-details:hover {
+            background-color: rgba(0, 0, 0, .05);
+
+            svg {
+                display: block;
+            }
+
+            svg:hover {
+                opacity: 1;
+            }
+        }
+
+        #edit-photo {
+            width: 418px;
+            height: 170px;
+
+            #edit-photo-title {
+                border: 1px solid rgba(158, 164, 167, 1);
+                border-radius: 3px;
+                padding: 0;
+                padding-left: 10px;
+                width: 406px;
+                height: 32px;
+                margin-bottom: 10px;
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            #edit-photo-description {
+                border: none;
+                overflow: auto;
+                outline: none;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+                resize: none;
+                padding: 10px;
+                height: 60px;
+                width: 396px;
+                border: 1px solid rgba(158, 164, 167, 1);
+                border-radius: 3px;
+                margin-bottom: 10px;
+                font-family: sans-serif;
+            }
+
+            #edit-photo-submit {
+                width: 84px;
+                height: 32px;
+                padding: 0 8px;
+                margin: 0;
+                float: right;
+            }
+        }
+    }
+}
+
+.photo-social {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 auto;
+
+    .photo-social-left {
+        width: 50%;
+        height: 100%;
+    }
+
+    .photo-social-right {
+        width: 50%;
+        height: 100%;
+
+        .photo-albums {
+
+            h5 {
+                margin: 20px 0 6px 0;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+            }
+
+            .photo-albums-array {
+
+                .photo-albums-item {
+                    transition: 0.2s;
+                    display: flex;
+                    justify-content: flex-start;
+                    width: 230px;
+                    height: 55px;
+                    padding: 9px;
+                    margin: 0;
+                    margin-bottom: 2px;
+                    border: 1px solid transparent;
+                    border-radius: 3px;
+
+                    a {
+                        width: 48px;
+                        height: 48px;
+                        margin-right: 20px;
+
+                        .photo-albums-image {
+                            background-size: cover;
+                            width: 48px;
+                            height: 48px;
+                        }
+                    }
+
+                    .photo-albums-item-info {
+                        
+                        a {
+                            color: rgba(0, 109, 172, 1);
+                            font-weight: 600;
+                            margin: 0;
+                            text-decoration: none;
+                        }
+
+                        a:hover {
+                            text-decoration: underline;
+                        }
+                        
+                        p {
+                            color: rgba(137, 137, 137, 1);
+                            font-size: 14px;
+                            margin: 0;
+                            margin-top: 3px;
+                        }
+                    }
+                }
+
+                .photo-albums-item:hover {
+                    background-color: rgba(230, 234, 236, 1);
+                }
+            }
+        }
+    }
+}
+
+
+.explore {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 30px;
+    margin: 24px 0 9px 0;
+    padding-top: 24px;
+}
+
+.photo-item a img {
+    display: block;
+    height: 20rem;
+    min-width: 100%;
+    object-fit: cover;
+}
+
+.photo-item .photo-overlay {
+    transition: 0.2s;
+    opacity: 0;
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 8px 8px 8px;
+    bottom: 0;
+    left: 0;
+}
+
+.photo-item:hover .photo-overlay {
+    opacity: 1;
+    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.2));
+}
+
+.photo-title {
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+    margin: 0;
+
+}
+
+.photo-user-link {
+    transition: 0.2s;
+    font-size: 11px;
+    text-decoration: none;
+    color: hsla(0, 0%, 100%, .7);
+    margin-top: 2px;
+}
+
+.photo-user-link:hover {
+    color: white;
+}
+
+.photo-container {
+    background-color: rgba(243, 245, 246, 1);
+    height: auto;
+    width: 100%;
+
+}
+
+.photo-show {
+    background-color: rgba(30, 30, 32, 1);
+    position: relative;
+
+    .photo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: 65vh;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+    }
+
+    a.back-url {
+        text-decoration: none;
+        color: white;
+        position: absolute;
+        font-size: 14px;
+        font-weight: 300;
+        left: 42px;
+        top: 20px;
+
+        svg {
+            position: absolute;
+            font-size: 18px;
+            font-weight: 600;
+            top: -1px;
+            left: -24px;
+        }
+    }
+
+    a.previous-url {
+        left: 42px;
+    }
+
+    a.next-url {
+        right: 42px;
+    }
+
+    a.previous-url, a.next-url {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        height: 510px;
+        top: 50px;
+    
+        svg {
+            transition: 0.4s;
+            font-size: 36px;
+            opacity: 0.7;
+
+            polyline {
+                stroke: white;
+            }
+        }
+    }
+
+    a.previous-url:hover, a.next-url:hover {
+
+        svg {
+            font-size: 36px;
+            opacity: 1;
+        }
+    }
+}
+
+.photo-delete-button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+    position: absolute;
+    bottom: 40px;
+    right: 20px;
+    cursor: pointer;
+
+    svg {
+        color: white;
+        font-size: 32px;
+    }
+    
+    svg:hover {
+        color: rgba(240, 0, 0, 1);
+    }
+}
+
+
+
+// For photo upload page
+
+.upload-form-container {
+    background-color: rgba(46, 46, 46, 1);
+    position: relative;
+    top: -7px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.upload-form-container .upload-bar {
+    background-color: rgba(239, 239, 239, 1);
+    top: 44px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upload-bar-left {
+    width: 595px;
+    margin-left: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upload-bar-left button, .upload-bar-left label {
+    height: 25px;
+    border: 1px solid transparent;
+    padding: 0;
+    color: rgba(56, 56, 56, 1);
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+.upload-bar-left button:hover, .upload-bar-left label:hover {
+    border: 1px solid rgba(186, 186, 186, 1);
+    background-image: linear-gradient(to bottom,rgba(242, 242, 242, 1) 0,rgba(214, 214, 214, 1) 100%);
+}
+
+.upload-bar-left button:active, .upload-bar-left label:active {
+    border: 1px solid rgba(186, 186, 186, 1);
+    background-image: linear-gradient(to bottom,rgba(198, 198, 198, 1) 0,rgba(242, 242, 242, 1) 100%);
+}
+
+.upload-bar-left button div {
+    padding: 4px 8px;
+    text-align: end;
+}
+
+.upload-add-remove {
+    width: 172px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upload-add-remove input[type=file] {
+    display: none;
+}
+
+.upload-add {
+    display: flex;
+    align-items: center;
+    width: 68px;
+    height: 25px;
+}
+
+.upload-add-remove label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 68px;
+}
+
+.upload-add-remove button {
+    width: 93px;
+}
+
+.add-image {
+    width: 100%;
+    height: 100%;
+    padding: 4px 8px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-image: image-url('upload-bar/add-image.png');
+    background-repeat: no-repeat;
+    background-position: 9px 9px;
+}
+
+button:disabled, button[disabled=disabled] {
+    opacity: 0.5;
+}
+
+button:disabled:hover, button[disabled=disabled]:hover {
+    background-image: none;
+    border: 1px solid transparent;
+}
+
+.remove-image {
+    background-image: image-url('upload-bar/remove-image.png');
+    background-repeat: no-repeat;
+    background-position: 9px 5px;
+}
+
+.upload-size-sort {
+    width: 178px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upload-size-sort .upload-size{
+    width: 86px;
+}
+
+.size-image {
+    background-image: image-url('upload-bar/size-image.png');
+    background-repeat: no-repeat;
+    background-position: 9px 9px;
+}
+
+.upload-size-sort .upload-sort {
+    width: 81px;
+}
+
+.sort-image {
+    background-image: image-url('upload-bar/sort-image.png');
+    background-repeat: no-repeat;
+}
+
+.upload-all-info {
+    width: 135px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upload-all-info .upload-all {
+    width: 56px;
+    
+}
+
+.upload-all-info .upload-info {
+    width: 67px;
+}
+
+.upload-button {
+    background-color: rgba(41, 97, 212, 1);
+    border: 0;
+    border-radius: 3px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 9px;
+    margin-right: 15px;
+}
+
+.upload-button:hover {
+    background-color: rgba(34, 83, 182, 1);
+}
+
+hr.upload-add-remove-divider {
+    height: 25px;
+    border: 0;
+    border-left: 1px solid rgb(206, 206, 206);
+    margin: 0 2px 0 4px;
+}
+
+.upload-display {
+    height: 100%;
+    position: relative;
+}
+
+.center-add-photo-button {
+    position: absolute;
+    top: 44%;
+    left: 39%;
+}
+
+.center-add-photo-button input {
+    display: none;
+}
+
+.center-add-photo-button label { 
+    background-color: rgba(41, 97, 212, 1);
+    color: rgba(255, 255, 255, 1);
+    width: 210px;
+    font-size: 18px;
+    padding: 8px 55px;
+    border-radius: 4px;
+    text-align: center;
+}
+    
+// Thumbails
+
+.thumbnails-array {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+[class^="thumbnails-container-"] {
+    background-color: rgba(46, 46, 46, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 220px;
+    width: 190px;
+    margin: 0px 0px 0px 5px;
+    border: 0;
+    outline: none;
+}
+
+[class^="thumbnails-container-"]:hover{
+     background-color: rgba(37, 37, 37, 1);
+}
+
+[class^="thumbnail-"] {
+    background-size: 169px;
+    background-repeat: no-repeat;
+    border: 4px solid rgba(34, 34, 34, 1);
+    position: relative;
+    margin-top: 15px;
+    max-height: 120px;
+    max-width: 170px;
+}
+
+[class^="thumbnail-"] img {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.upload-inputs input {
+    background-color: transparent;
+    width: 170px;
+    height: 18px;
+    border: 0;
+    color: rgba(204, 204, 204, 1);
+    font-weight: bold;
+}
+
+.upload-inputs input:focus {
+    background-color: white;
+    color: rgba(34, 34, 34, 1);
+}
+
+.upload-inputs textarea {
+    background-color: transparent;
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none;
+    font-family: sans-serif;
+    font-size: 12px;
+    width: 170px;
+    height: 32px;
+    border: 0;
+    color: rgba(204, 204, 204, 1);
+}
+
+.upload-inputs textarea:focus {
+    color: rgba(34, 34, 34, 1);
+}
+
+.upload-inputs textarea:focus {
+    background-color: white;
+}
+
+.selected-thumbnail {
+    border-color: rgba(234, 51, 131, 1);
+}

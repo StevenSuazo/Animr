@@ -38,48 +38,41 @@
 // );
 
 
-export const fetchPhotos = (count, userId, tagId) => {
-  return (
-    $.ajax({
-      method: 'GET',
-      url: `api/photos`,
-      data: {
-        count: count,
-        user_id: userId,
-        tag_id: tagId
-      }
-    })
-  );
-};
+export const getPhotos = () => {
+  return $.ajax({
+    url: '/api/photos',
+    method: 'GET'
+  });
+}
 
-export const fetchPhoto = id => (
-  $.ajax({
-    method: 'GET',
-    url: `api/photos/${id}`,
-  })
-);
+export const getPhoto = id => {
+  return $.ajax({
+    url: `/api/photos/${id}`,
+    method: 'GET'
+  });
+}
 
-export const createPhoto = photo => (
-  $.ajax({
+export const postPhoto = formData => {
+  return $.ajax({
+    url: `/api/photos`,
     method: 'POST',
-    url: `api/photos`,
-    data: photo,
+    data: formData,
     contentType: false,
     processData: false
-  })
-);
+  });
+}
 
-export const updatePhoto = photo => (
-  $.ajax({
+export const editPhoto = (formData, id) => {
+  return $.ajax({
+    url: `/api/photos/${id}`,
     method: 'PATCH',
-    url: `api/photos/${photo.id}`,
-    data: { photo }
-  })
-);
+    data: formData
+  });
+}
 
-export const deletePhoto = id => (
-  $.ajax({
-    method: 'DELETE',
-    url: `api/photos/${id}`
-  })
-);
+export const deletePhoto = photoId => {
+  return $.ajax({
+    url: `/api/photos/${photoId}`,
+    method: 'DELETE'
+  });
+}
