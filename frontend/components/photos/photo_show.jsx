@@ -4,11 +4,13 @@ import PhotoDisplay from "./photo_display";
 class PhotoShow extends React.Component {
   constructor(props) {
     super(props);
+    // debugger
     this.state = {
-      id: this.props.photo.id,
-      title: this.props.photo.title,
-      description: this.props.photo.description,
+      id: this.props.photos.id,
+      title: this.props.photos.title,
+      description: this.props.photos.description,
     };
+    // debugger
   }
 
   update(field) {
@@ -33,12 +35,14 @@ class PhotoShow extends React.Component {
     }
 
   render() {
-    const { currentUser, photo } = this.props;
-    if (!this.props.users || !this.props.photo) return null;
+    debugger
+    const { currentUser, photos, photoId } = this.props;
+    if (!this.props.users || !this.props.photos) return null;
     return (
       <div>
         <PhotoDisplay
-          photo={photo}
+          photos={photos}
+          photoId={photoId}
           currentUser={currentUser}
           delete={() =>
             this.props
