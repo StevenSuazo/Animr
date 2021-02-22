@@ -11,7 +11,7 @@ class PhotosIndexItem extends React.Component {
         debugger
         return (
             <div className="photo-item">
-                <Link to={`/photos/${displayName}/${photo.id}/explore`}>
+                <Link to={`/photos/${photo.id}`}>
                     <img src={photo.pictureUrl} alt={photo.description} />
                 </Link>
                 <div className="photo-overlay">
