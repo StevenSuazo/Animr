@@ -35,7 +35,7 @@ class PhotoShow extends React.Component {
     }
 
   render() {
-    debugger
+    
     const { currentUser, photos, photoId } = this.props;
     if (!this.props.users || !this.props.photos) return null;
     return (

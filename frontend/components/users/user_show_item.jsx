@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class PhotosIndexItem extends React.Component {
+class UserShowItem extends React.Component {
     constructor(props) {
         super(props);
+        debugger
     }
 
     render() {
         const { photo, displayName } = this.props;
-
+        debugger
         return (
             <div className="photo-item">
                 <Link to={`/photos/${photo.id}`}>
@@ -25,4 +26,4 @@ class PhotosIndexItem extends React.Component {
     }
 }
 
-export default PhotosIndexItem;
+export default UserShowItem;

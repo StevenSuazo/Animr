@@ -10,6 +10,7 @@ const NavBar = ({ currentUser, logout }) => {
           <div className="navbar-container-out">
             <div className="navbar-left">
               <Link to="/" className="logo">Animr</Link>
+              <Link className="you-dropdown-link unselectable" to={`/users/${currentUser.id}`}>You</Link>
             </div>
             <div className="navbar-right-out">
               <button className="logout-link" onClick={logout}>Log Out</button>
