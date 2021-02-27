@@ -34,7 +34,7 @@ import { getPhotos, getPhoto } from '../../actions/photos_actions';
 import PhotoShow from './photo_show';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  
   return {
     photoId: ownProps.match.params.photoId,
     users: state.entities.users,

@@ -22,7 +22,6 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_ALL_USERS:
       let newState = {}
       let users = Object.values(action.users);
-      debugger
       users.forEach(user => {
         newState[user.id] = user;
       });

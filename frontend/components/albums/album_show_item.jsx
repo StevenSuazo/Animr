@@ -1,22 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class PhotosIndexItem extends React.Component {
+class AlbumShowItem extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        const { photo, username } = this.props;
-
+        const { photo, photos, username, albumId } = this.props;
+        debugger
         return (
             <div className="photo-item">
-                <Link to={`/photos/${photo.id}`}>
-                    <img src={photo.pictureUrl} alt={photo.description} />
+                <Link to={`/photos/${photo.id}/`}>
+                    <img src={photos[photo.id].pictureUrl} alt={photo.description} />
                 </Link>
                 <div className="photo-overlay">
                     <p className="photo-title">{photo.title}</p>
-                    <Link className="photo-user-link" to={`/users/${photo.user_id}`}>
+                    <Link className="photo-user-link" to={`/photos/${photo.user_id}`}>
                         by {username}
                     </Link>
                 </div>
@@ -25,4 +25,4 @@ class PhotosIndexItem extends React.Component {
     }
 }
 
-export default PhotosIndexItem;
+export default AlbumShowItem;

@@ -24,7 +24,7 @@
 //               this.props.photos.map(photo =>
 //                 <div className="photo-box"
 //                   key={photo.id}>
-//                     <PhotosIndexItem key={photo.id} photo={photo} displayName={"test"} />
+//                     <PhotosIndexItem key={photo.id} photo={photo} username={"test"} />
 
 //                 </div>
 //               )}
@@ -52,7 +52,6 @@ class PhotosIndex extends React.Component {
 
   render() {
     const { photos, users } = this.props;
-    debugger
 
     if (Object.values(users).length > 1) {
       return (
@@ -60,7 +59,7 @@ class PhotosIndex extends React.Component {
           <div className="photo-array">
             <h3 className="explore">Explore</h3>
             <div className="photo-grid">
-              {photos.map(photo => <PhotosIndexItem key={photo.id} photo={photo} displayName={users[photo.user_id].username} />)}
+              {photos.map(photo => <PhotosIndexItem key={photo.id} photo={photo} username={users[photo.user_id].username} />)}
             </div>
           </div>
         </div>
