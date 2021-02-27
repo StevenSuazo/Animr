@@ -7,7 +7,7 @@ class UserShowHeader extends React.Component {
 
     render() {
         const { user, photos } = this.props;
-        const displayName = user.email.split("@")[0];
+        const username = user.email.split("@")[0];
 
         let backgroundPhoto;
         let numPhotos;
@@ -25,7 +25,7 @@ class UserShowHeader extends React.Component {
 
         if (backgroundPhoto) {
             const style = {
-                backgroundImage: 'url(' + backgroundPhoto.photoUrl + ')'
+                backgroundImage: 'url(' + backgroundPhoto.pictureUrl + ')'
             }
             return (
                 <div
@@ -36,7 +36,7 @@ class UserShowHeader extends React.Component {
                         <div className="user-header-content">
                             <h1>{user.fname} {user.lname}</h1>
                             <div className="user-header-subcontent">
-                                <p>{displayName}</p>
+                                <p>{username}</p>
                                 <p>{photos.length} {numPhotos}</p>
                             </div>
                         </div>

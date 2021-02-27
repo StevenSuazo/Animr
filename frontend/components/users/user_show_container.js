@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
     debugger
     return {
         photos: selectAllPhotos(state),
-        // albums: selectAllAlbums(state),
+        albums: selectAllAlbums(state),
         user: state.entities.users[ownProps.match.params.userId]
     }
 };

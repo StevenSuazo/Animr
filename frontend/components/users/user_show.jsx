@@ -37,18 +37,17 @@ class UserShow extends React.Component {
 
     render() {
         const { user, photos, albums } = this.props;
-        
+        debugger
         const userPhotos = photos.filter(photo => {
             return parseInt(photo.user_id) === user.id;
         });
-        // const userAlbums = albums.filter(album => {
-        //         return parseInt(album.user_id) === user.id;
-        // });
+        const userAlbums = albums.filter(album => {
+                return parseInt(album.user_id) === user.id;
+        });
 
         let display;
-
         if (this.props.location.pathname.includes("albums")) {
-            if (userAlbums.length === 0) {
+            if (userAlbums.length === 0 && albums[0].user_id == user.id) {
                 display = (
                     <div className="albums-body">
                         <div className="albums-toolbar">
@@ -57,10 +56,10 @@ class UserShow extends React.Component {
                                 <p>New album</p>
                             </Link>
                         </div>
-                        <p className="no-album-text">This user does not have any albums.</p>
+                        <p className="no-album-text">{this.props.user.username} does not have any albums.</p>
                     </div>
                 )
-            } else {
+            } else if (userAlbums.length > 0 && albums[0].user_id == user.id){
                 display = (
                     <div className="albums-body">
                         <div className="albums-toolbar">
@@ -71,7 +70,24 @@ class UserShow extends React.Component {
                         </div>
                         <div className="albums-array">
                             <div className="albums-grid">
-                                {userAlbums.map(album => <UserShowAlbum key={album.id} album={album} currentUser={user} deleteAlbum={this.props.deleteAlbum} history={this.props.history} />)}
+                                {userAlbums.map(album => <UserShowAlbum key={album.id} album={album} photos={photos} currentUser={user} deleteAlbum={this.props.deleteAlbum} history={this.props.history} />)}
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+            else if (userAlbums.length === 0 && albums[0].user_id !== user.id) {
+                display = (
+                    <div className="albums-body">
+                        <p className="no-album-text">{this.props.user.username} does not have any albums.</p>
+                    </div>
+                )
+            } else if (userAlbums.length > 0 && albums[0].user_id !== user.id){
+                display = (
+                    <div className="albums-body">
+                        <div className="albums-array">
+                            <div className="albums-grid">
+                                {userAlbums.map(album => <UserShowAlbum key={album.id} album={album} photos={photos} currentUser={user} deleteAlbum={this.props.deleteAlbum} history={this.props.history} />)}
                             </div>
                         </div>
                     </div>
@@ -79,17 +95,16 @@ class UserShow extends React.Component {
             }
         } else {
             if (userPhotos.length === 0) {
-                debugger
                 display = (
                     <div className="photo-array">
-                        <p>This user does not have any photos.</p>
+                        <p>{this.props.user.username} does not have any photos.</p>
                     </div>
                 )
             } else {
                 display = (
                     <div className="photo-array">
                         <div className="photo-grid">
-                            {userPhotos.map(photo => <UserShowItem key={photo.id} photo={photo} displayName={user.username} />)}
+                            {userPhotos.map(photo => <UserShowItem key={photo.id} photo={photo} username={user.username} />)}
                         </div>
                     </div>
                 )
@@ -108,7 +123,7 @@ class UserShow extends React.Component {
                             Photostream
                         </Link>
                         <Link
-                            to={`/photos/${user.id}/albums`}
+                            to={`/users/${user.id}/albums`}
                             id="user-show-albums-link"
                             className="user-show-tab">
                             Albums

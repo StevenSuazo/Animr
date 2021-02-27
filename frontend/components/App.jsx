@@ -7,7 +7,9 @@ import LoginFormContainer from './session_form/login_form_container';
 import ExploreContainer from './pages/explore/explore_container';
 import PhotoShowContainer from "./photos/photo_show_container";
 import UserShowContainer from "./users/user_show_container"
-import { AuthRoute } from '../util/route_util';
+import AlbumShowContainer from "./albums/album_show_container"
+import AlbumFormContainer from './albums/album_form_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
@@ -21,6 +23,9 @@ const App = () => (
       <Route exact path="/explore" component={ExploreContainer} />
       <Route exact path="/photos/:photoId" component={PhotoShowContainer} />
       <Route exact path="/users/:userId" component={UserShowContainer} />
+      <Route exact path="/users/:userId/albums" component={UserShowContainer} />
+      <Route exact path="/users/:userId/albums/:albumId" component={AlbumShowContainer} />
+      <ProtectedRoute path="/photos/organize/new_set" component={AlbumFormContainer} />
     </Switch>
   </div>
 );

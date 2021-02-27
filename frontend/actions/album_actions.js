@@ -34,7 +34,6 @@ export const getAlbum = id => dispatch => AlbumAPIUtil.getAlbum(id)
 export const postAlbum = albumForm => dispatch => AlbumAPIUtil.postAlbum(albumForm)
     .then(albums => dispatch(receiveAlbums([albums])),
         errors => dispatch(receiveAlbumErrors(errors.responseJSON)));
-;
 
 export const deleteAlbum = albumId => dispatch => AlbumAPIUtil.deleteAlbum(albumId)
     .then(() => dispatch(removeAlbum(albumId)));

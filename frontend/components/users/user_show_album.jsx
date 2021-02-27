@@ -14,10 +14,11 @@ class UserShowAlbum extends React.Component {
     }
 
     render() {
-        const { currentUser, album, displayName } = this.props;
+        const { currentUser, album, photos } = this.props;
+        debugger
 
         const style = {
-            backgroundImage: 'url(' + album.photos[0].photoUrl + ')'
+            backgroundImage: 'url(' + photos[album.photo_ids[0] - 1].pictureUrl + ')'
         }
 
         const albumDelete = album && album.user_id == currentUser.id ? (
@@ -39,8 +40,8 @@ class UserShowAlbum extends React.Component {
         }
 
         return (
-            <div className="album-item" style={style}>
-                <Link to={`/photos/${currentUser.id}/albums/${album.id}`}>
+            <div className="album-item" style={photos.length > 1 ? style : null}>
+                <Link to={`/users/${currentUser.id}/albums/${album.id}`}>
                     <div className="album-overlay">
                         <h4 className="album-name">{album.name}</h4>
                         <p className="num-photos">{album.photos.length} {numPhotos}</p>
