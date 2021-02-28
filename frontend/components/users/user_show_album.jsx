@@ -15,7 +15,6 @@ class UserShowAlbum extends React.Component {
 
     render() {
         const { currentUser, album, photos } = this.props;
-        debugger
 
         const style = {
             backgroundImage: 'url(' + photos[album.photo_ids[0] - 1].pictureUrl + ')'

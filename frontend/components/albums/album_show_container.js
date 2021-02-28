@@ -3,7 +3,6 @@ import { getAlbum } from '../../actions/album_actions';
 import AlbumShow from './album_show';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     const album = state.entities.albums[ownProps.match.params.albumId]
     return {
         album,

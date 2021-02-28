@@ -14,7 +14,6 @@ class AlbumShow extends React.Component {
 
     render() {
         const { photos, album, currentUser } = this.props;
-        debugger
 
         if (album) {
             const style = {

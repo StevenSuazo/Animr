@@ -28,7 +28,7 @@
 
 import { connect } from 'react-redux';
 import { getPhotos, getPhoto } from '../../actions/photos_actions';
-// import { getUsers } from '../../actions/user_actions';
+import { getUsers } from '../../actions/user_actions';
 // import { getTags } from './../../actions/tag_actions';
 // import { selectAllTags } from './../../reducers/selectors';
 import PhotoShow from './photo_show';
@@ -46,7 +46,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  // getUsers: () => dispatch(getUsers()),
+  getUsers: () => dispatch(getUsers()),
   // getTags: () => dispatch(getTags()),
   getPhotos: () => dispatch(getPhotos()),
   getPhoto: () => dispatch(getPhoto()),
