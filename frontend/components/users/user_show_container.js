@@ -5,7 +5,6 @@ import { selectAllPhotos, selectAllAlbums } from './../../reducers/selectors';
 import UserShow from './user_show';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     return {
         photos: selectAllPhotos(state),
         albums: selectAllAlbums(state),

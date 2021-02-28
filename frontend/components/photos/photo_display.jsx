@@ -1,7 +1,7 @@
 import React from "react";
 
 const PhotoDisplay = (props) => {
-  
+  debugger
   return (
     <div className="photo-display">
       <img

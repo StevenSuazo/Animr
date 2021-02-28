@@ -8,7 +8,6 @@ class AlbumShowItem extends React.Component {
 
     render() {
         const { photo, photos, username, albumId } = this.props;
-        debugger
         return (
             <div className="photo-item">
                 <Link to={`/photos/${photo.id}/`}>

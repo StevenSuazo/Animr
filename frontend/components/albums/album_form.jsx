@@ -48,7 +48,6 @@ class AlbumForm extends React.Component {
 
     render() {
         let { currentUser, photos } = this.props;
-        debugger
         const userPhotos = photos.filter(photo => {
             return parseInt(photo.user_id) === currentUser.id;
         });
