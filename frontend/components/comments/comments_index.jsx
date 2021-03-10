@@ -18,7 +18,6 @@ class CommentsIndex extends React.Component {
             return parseInt(comment.photo_id) == photoId;
         });
 
-        debugger
         return (
             <div className="comments-container">
                 <div className="comments-list">

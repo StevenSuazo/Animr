@@ -42,7 +42,6 @@ class CommentsIndexItem extends React.Component {
             deleteComment = null;
             editComment = null;
         }
-        debugger
         return (
             <div className="comment">
                 <div className="comment-content">

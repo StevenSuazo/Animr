@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import { BiEdit } from 'react-icons/bi';
-// import PhotoDisplay from "./photo_display";
 import CommentsIndexContainer from "../comments/comments_index_container"
+import TagsIndexContainer from "../tags/tags_index_container"
 
 class PhotoShow extends React.Component {
   constructor(props) {
@@ -26,7 +26,6 @@ class PhotoShow extends React.Component {
       if (prevProps.match.params.photoId !== this.props.match.params.photoId) {
         this.props.fetchPhoto(this.props.match.params.photoId);
       }
-      debugger
   
       if (prevProps.photo.title !== this.props.photo.title) {
         this.setState({
@@ -40,7 +39,6 @@ class PhotoShow extends React.Component {
     const { currentUser, photos, photoId, users } = this.props;
     if (!this.props.users || !this.props.photos) return null;
 
-    debugger
     return (
       <div className="photo-container">
         <div className="photo-show">
@@ -67,8 +65,7 @@ class PhotoShow extends React.Component {
             <CommentsIndexContainer photoId={photoId} photoOwnerId={photos[photoId].user_id} />
           </div>
           <div className="photo-social-right">
-            {/* <PhotoAlbumsContainer photo={photo} />
-            <TagsIndexContainer photoId={photo.id} photoOwnerId={photo.user_id} /> */}
+            <TagsIndexContainer photoId={photoId} photoOwnerId={photos[photoId].user_id} />
           </div>
         </div>
       </div>

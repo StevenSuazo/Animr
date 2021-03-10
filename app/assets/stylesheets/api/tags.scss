@@ -1,0 +1,122 @@
+.hidden {
+    display: none;
+}
+
+.tags-container {
+    width: 420px;
+    height: 100%;
+    margin-bottom: 100px;
+
+    .tags-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+            color: rgba(0, 109, 172, 1);
+            font-size: 16px;
+        }
+
+        button {
+            background: none;
+            color: inherit;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+            font-size: 14px;
+            color: rgba(0, 109, 172, 1);
+        }
+
+        button:hover {
+            text-decoration: underline;
+        }
+    }
+
+    form {
+
+        #tag-name {
+            padding: 6px 10px;
+            margin-bottom: 5px;
+            border: 1px solid rgba(158, 164, 167, 1);
+            border-radius: 3px;
+            font-size: 14px;
+            line-height: 1.5;
+            height: 21px;
+            width: 182.5px;
+        }
+
+        #tag-name:focus {
+            border: 1px solid rgba(0, 141, 223, 1);
+        }
+
+        #tag-submit {
+            display: none;
+        }
+    }
+
+    .tag-item {
+        display: inline-block;
+        margin-right: 5px;
+
+        .tag {
+            background-color: rgba(207, 214, 217, 1);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: max-content;
+            height: 21px;
+            padding: 3px 0;
+            border-radius: 5px;
+
+            .tag-name {
+                display: inline-block;
+                text-decoration: none;
+                color: rgba(33, 33, 36, 1);
+                width: max-content;
+                font-size: 14px;
+                padding: 0 10px;
+                margin: 0;
+            }
+
+            button {
+                display: inline-block;
+                transition: 0.2s;
+                background: none;
+                color: inherit;
+                border: none;
+                padding: 0;
+                font: inherit;
+                cursor: pointer;
+                outline: inherit;
+                margin: 5.5px 0;
+                width: 0px;
+                height: 16px;
+
+                svg {
+                    color: rgba(255, 255, 255, 1);
+                    display: none;
+                }
+            }
+        }
+
+        .tag:hover {
+            background-color: rgba(134, 141, 145, 1);
+            padding-right: 1px;
+
+            .tag-name {
+                color: rgba(255, 255, 255, 1);
+            }
+
+            button {
+                // display: block;
+                width: 16px;
+
+                svg {
+                    display: block;
+                }
+            }
+        }
+    }
+}

@@ -9,6 +9,7 @@ import PhotoShowContainer from "./photos/photo_show_container";
 import UserShowContainer from "./users/user_show_container"
 import AlbumShowContainer from "./albums/album_show_container"
 import AlbumFormContainer from './albums/album_form_container';
+import TagShowContainer from './tags/tag_show_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -25,6 +26,7 @@ const App = () => (
       <Route exact path="/users/:userId" component={UserShowContainer} />
       <Route exact path="/users/:userId/albums" component={UserShowContainer} />
       <Route exact path="/users/:userId/albums/:albumId" component={AlbumShowContainer} />
+      <Route exact path="/photos/tag/:tagName" component={TagShowContainer} />
       <ProtectedRoute path="/photos/organize/new_set" component={AlbumFormContainer} />
     </Switch>
   </div>
