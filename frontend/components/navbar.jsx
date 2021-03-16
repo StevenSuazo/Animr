@@ -10,6 +10,7 @@ const NavBar = ({ currentUser, logout }) => {
         <nav className="nav-bar-out flex-center">
           <div className="navbar-container-out">
             <div className="navbar-left">
+              <img src={window.logo} className="icon-logo-nav" />
               <Link to="/" className="logo">Animr</Link>
               <div className="dropdown">
                 <div className="you-drop">You</div>
@@ -38,6 +39,7 @@ const NavBar = ({ currentUser, logout }) => {
         <nav className="nav-bar-out flex-center">
           <div className="navbar-container-out">
             <div className="navbar-left">
+              <img src={window.logo} className="icon-logo-nav" />
               <Link to="/" className="logo">Animr</Link>
             </div>
             <div className="navbar-right-out">

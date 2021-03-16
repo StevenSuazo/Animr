@@ -17,7 +17,7 @@ class PhotosIndexItem extends React.Component {
                 <div className="photo-overlay">
                     <p className="photo-title">{photo.title}</p>
                     <Link className="photo-user-link" to={`/users/${photo.user_id}`}>
-                        by 
+                        by {username}
                     </Link>
                 </div>
             </div>

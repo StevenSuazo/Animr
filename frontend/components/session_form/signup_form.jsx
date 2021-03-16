@@ -57,7 +57,7 @@ class SignUpForm extends React.Component {
           <div className="signup-form-container">
             <form onSubmit={this.handleSubmit} className="login-form-box">
               <br />
-              <img src="assets/logo.jpg" className="logo"/>
+              <img src={window.logo} className="icon-logo" />
               <p>Sign up for Animr</p> 
               <div className="login-form">
                 <br />
@@ -91,11 +91,9 @@ class SignUpForm extends React.Component {
                     </div>
                   </div>
                 </div>
-                <br />
-                <input className="session-submit" type="submit" value={this.props.formType} />
-                <br/>
-                <div className="login-q">Already an Animr? <Link to="/login" >Log in here.</Link>
-                  {this.renderErrors()}</div>
+                <input className="session-submit-up" type="submit" value={this.props.formType} />
+                <div className="login-q">Already an Animr? <Link to="/login" >Log in here.</Link></div>
+                <div>{this.renderErrors()}</div>
               </div>
             </form>
           </div>

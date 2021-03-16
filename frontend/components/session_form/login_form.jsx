@@ -1,7 +1,6 @@
 import { endsWith } from 'lodash';
 import React from 'react';
 import { Link } from "react-router-dom"
-// import { logo } from '../../../app/assets/images/logo.png';
 
 class LogInForm extends React.Component {
   constructor(props) {
@@ -52,14 +51,13 @@ class LogInForm extends React.Component {
   }
 
   render() {
-    const logo = window.logo;
     return (
       <>
         <div className="session-wrap">
           <div className="login-form-container">
             <form onSubmit={this.handleSubmit} className="login-form-box">
               <br/>
-              <img src={window.logo} className="logo" />
+              <img src={window.logo} className="icon-logo" />
               <p>Log in to Animr</p> 
               <div className="login-form">
                 <br />
@@ -86,7 +84,7 @@ class LogInForm extends React.Component {
                   </div>
                 </div>
                 </div>
-                <input className="session-submit" type="submit" value={this.props.formType} />
+                <input className="session-submit-in" type="submit" value={this.props.formType} />
                 <div>{this.renderErrors()}</div>
                 <div className="signup-q">Not yet an Animr? <Link to="/signup" >Sign up here.</Link>
                 </div>

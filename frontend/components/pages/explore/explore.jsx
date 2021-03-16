@@ -13,14 +13,14 @@ class PhotosIndex extends React.Component {
 
   render() {
     const { currentUser, photos, users } = this.props;
-    
+    debugger
     if (Object.values(users).length > 1) {
       return (
         <div className="explore-background">
           <div className="photo-array">
             <h3 className="explore">Explore</h3>
             <div className="photo-grid">
-              {photos.map(photo => <PhotosIndexItem key={photo.id} photo={photo}  />)}
+              {photos.map(photo => photo.id ? <PhotosIndexItem key={photo.id} photo={photo} username={users[photo.user_id].username} /> : null)}
             </div>
           </div>
         </div>

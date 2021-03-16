@@ -13,7 +13,7 @@
 
 .login-form-container {
   width: 325px;
-  height: 375px;
+  height: 390px;
   border: 1px solid #898989;
   border-radius: 5px;
   background-color: white;
@@ -25,7 +25,7 @@
 
 .signup-form-container {
   width: 325px;
-  height: 450px;
+  height: 460px;
   border: 1px solid #898989;
   border-radius: 5px;
   background-color: white;
@@ -56,13 +56,28 @@
   font-size: 24px;
 }
 
-.session-submit{
+.session-submit-in{
   width: 270px;
   height: 40px;
   background-color: #128fdc;
   padding: 8px 24px 8px 24px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+  font: Helvetica;
+  font-size: 14.5px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.session-submit-up{
+  width: 270px;
+  height: 40px;
+  background-color: #128fdc;
+  padding: 8px 24px 8px 24px;
+  margin-top: 5px;
+  margin-bottom: 10px;
   font: Helvetica;
   font-size: 14.5px;
   color: white;
@@ -130,7 +145,11 @@
   cursor: pointer;
 }
 
-.session-submit:hover {
+.session-submit-in:hover {
+  background-color: rgb(0, 132, 211);
+}
+
+.session-submit-up:hover {
   background-color: rgb(0, 132, 211);
 }
 
@@ -142,12 +161,20 @@
   color: black;
 }
 
-.logo {
+.icon-logo {
   width: 50px;
   height: 50px;
 }
 
-.logo:hover {
+.icon-logo-nav {
+  position: relative;
+  align-self: center;
+  margin-right: 2px;
+  width: 45px;
+  height: 45px;
+}
+
+.icon-logo:hover, .icon-logo-nav:hover {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
