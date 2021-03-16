@@ -104,7 +104,7 @@ class UserShow extends React.Component {
                 display = (
                     <div className="photo-array">
                         <div className="photo-grid">
-                            {userPhotos.map(photo => <UserShowItem key={photo.id} photo={photo} username={user.username} />)}
+                            {userPhotos.map(photo => photo.pictureUrl !== "" ? <UserShowItem key={photo.id} photo={photo} username={user.username} /> : null)}
                         </div>
                     </div>
                 )
