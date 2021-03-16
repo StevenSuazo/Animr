@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import { BiEdit } from 'react-icons/bi';
+import { CgTrash } from 'react-icons/cg';
 import CommentsIndexContainer from "../comments/comments_index_container"
 import TagsIndexContainer from "../tags/tags_index_container"
 
@@ -12,6 +13,7 @@ class PhotoShow extends React.Component {
       title: this.props.photos.title,
       description: this.props.photos.description,
     };
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   update(field) {
@@ -22,22 +24,39 @@ class PhotoShow extends React.Component {
     };
   }
   
-    componentDidUpdate(prevProps, prevState) {
-      if (prevProps.match.params.photoId !== this.props.match.params.photoId) {
-        this.props.fetchPhoto(this.props.match.params.photoId);
-      }
-  
-      if (prevProps.photo.title !== this.props.photo.title) {
-        this.setState({
-          title: this.props.photo.title,
-          description: this.props.photo.description,
-        });
-      }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.match.params.photoId !== this.props.match.params.photoId) {
+      this.props.fetchPhoto(this.props.match.params.photoId);
     }
+
+    if (prevProps.photo.title !== this.props.photo.title) {
+      this.setState({
+        title: this.props.photo.title,
+        description: this.props.photo.description,
+      });
+    }
+  }
+
+  handleDelete(e) {
+    e.preventDefault;
+    this.props.deletePhoto(this.props.photoId)
+      .then(this.props.history.push(`/users/${this.props.currentUser.id}`));
+  }
 
   render() {
     const { currentUser, photos, photoId, users } = this.props;
     if (!this.props.users || !this.props.photos) return null;
+    // if (photoId !== undefined) {
+    //   const photoDelete = photos[photoId].user_id == currentUser.id ? (
+    //     <button
+    //       className="photo-delete-button"
+    //       onClick={this.handleDelete}
+    //       type="button"
+    //     >
+    //       <CgTrash />
+    //     </button>
+    //   ) : (null);
+    // }
 
     return (
       <div className="photo-container">
@@ -45,10 +64,15 @@ class PhotoShow extends React.Component {
           <div className="photo">
             <img src={photos[photoId].pictureUrl} alt={photos[photoId].description} />
           </div>
-          {/* <Link className="back-url" to={backLink}><BiArrowBack />Back to {backLinkText}</Link>
-          <Link className="previous-url" to={previousPhotoURL}><GrPrevious /></Link>
-          <Link className="next-url" to={nextPhotoURL}><GrNext /></Link> */}
-          {/* {photoDelete} */}
+          {photos[photoId].user_id == currentUser.id ? (
+            <button
+              className="photo-delete-button"
+              onClick={this.handleDelete}
+              type="button"
+            >
+              <CgTrash />
+            </button>
+          ) : (null)}
         </div>
         <div className="photo-info">
           <Link to={`/users/${photos[photoId].user_id}`}>{users[photos[photoId].user_id].username}</Link>

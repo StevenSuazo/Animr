@@ -25,7 +25,6 @@ class TagShow extends React.Component {
         let tagPhotoIds = filteredTags.map(tag => tag.photo_id)
         let uniqueTagPhotoIds = tagPhotoIds.filter(this.onlyUnique);
 
-        debugger
         if (Object.keys(photos).length > 0 && tagPhotoIds.length > 0) {
             return (
                 <div className="explore-background">

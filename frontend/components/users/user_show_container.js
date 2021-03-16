@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
     return {
         photos: selectAllPhotos(state),
         albums: selectAllAlbums(state),
-        user: state.entities.users[ownProps.match.params.userId]
+        user: state.entities.users[ownProps.match.params.userId],
+        currUserId: state.session.id
     }
 };
 

@@ -12,15 +12,15 @@ class PhotosIndex extends React.Component {
   }
 
   render() {
-    const { photos, users } = this.props;
-
+    const { currentUser, photos, users } = this.props;
+    
     if (Object.values(users).length > 1) {
       return (
         <div className="explore-background">
           <div className="photo-array">
             <h3 className="explore">Explore</h3>
             <div className="photo-grid">
-              {photos.map(photo => <PhotosIndexItem key={photo.id} photo={photo} username={users[photo.user_id].username} />)}
+              {photos.map(photo => <PhotosIndexItem key={photo.id} photo={photo}  />)}
             </div>
           </div>
         </div>

@@ -6,6 +6,7 @@ import SignupFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 import ExploreContainer from './pages/explore/explore_container';
 import PhotoShowContainer from "./photos/photo_show_container";
+import PhotoFormContainer from './photos/photo_form_container';
 import UserShowContainer from "./users/user_show_container"
 import AlbumShowContainer from "./albums/album_show_container"
 import AlbumFormContainer from './albums/album_form_container';
@@ -28,6 +29,7 @@ const App = () => (
       <Route exact path="/users/:userId/albums/:albumId" component={AlbumShowContainer} />
       <Route exact path="/photos/tag/:tagName" component={TagShowContainer} />
       <ProtectedRoute path="/photos/organize/new_set" component={AlbumFormContainer} />
+      <ProtectedRoute path="/upload" component={PhotoFormContainer} />
     </Switch>
   </div>
 );

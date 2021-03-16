@@ -36,17 +36,18 @@ class UserShow extends React.Component {
     }
 
     render() {
-        const { user, photos, albums } = this.props;
+        const { user, photos, albums, location, currUserId} = this.props;
         const userPhotos = photos.filter(photo => {
             return parseInt(photo.user_id) === user.id;
         });
         const userAlbums = albums.filter(album => {
                 return parseInt(album.user_id) === user.id;
         });
+        const albumOwner = location.pathname.includes(currUserId)
 
         let display;
         if (this.props.location.pathname.includes("albums")) {
-            if (userAlbums.length === 0 && albums[0].user_id == user.id) {
+            if (userAlbums.length === 0 && albumOwner) {
                 display = (
                     <div className="albums-body">
                         <div className="albums-toolbar">
@@ -58,7 +59,7 @@ class UserShow extends React.Component {
                         <p className="no-album-text">{this.props.user.username} does not have any albums.</p>
                     </div>
                 )
-            } else if (userAlbums.length > 0 && albums[0].user_id == user.id){
+            } else if (userAlbums.length > 0 && albumOwner){
                 display = (
                     <div className="albums-body">
                         <div className="albums-toolbar">
@@ -75,13 +76,13 @@ class UserShow extends React.Component {
                     </div>
                 )
             }
-            else if (userAlbums.length === 0 && albums[0].user_id !== user.id) {
+            else if (userAlbums.length === 0 && !albumOwner) {
                 display = (
                     <div className="albums-body">
                         <p className="no-album-text">{this.props.user.username} does not have any albums.</p>
                     </div>
                 )
-            } else if (userAlbums.length > 0 && albums[0].user_id !== user.id){
+            } else if (userAlbums.length > 0 && !albumOwner){
                 display = (
                     <div className="albums-body">
                         <div className="albums-array">
@@ -109,7 +110,6 @@ class UserShow extends React.Component {
                 )
             }
         }
-
         return (
             <div className="user-background">
                 <UserShowHeader user={user} photos={userPhotos} />

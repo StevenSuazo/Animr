@@ -4,17 +4,13 @@ import { getUsers } from '../../../actions/user_actions'
 import { selectAllPhotos } from '../../../reducers/selectors'
 import Explore from './explore';
 
-// const mSTP = state => {
-//   return {
-//     photos: Object.values(state.entities.photos)
-//     // users: users
-//   }
-// };
-
-const mapStateToProps = state => ({
-  photos: selectAllPhotos(state),
-  users: state.entities.users
-});
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.entities.users[state.session.id],
+    photos: selectAllPhotos(state),
+    users: state.entities.users
+  }
+};
 
 const mapDispatchToProps = dispatch => ({
   getPhotos: () => dispatch(getPhotos()),

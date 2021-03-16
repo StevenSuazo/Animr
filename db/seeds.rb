@@ -6,36 +6,38 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
 
-demo = User.create!(username: "Demo", email: "demo@aa.com", password: "password")
+demo = User.create!(username: "Demo", email: "demo@appAcademy.com", password: "password")
 luffy = User.create!(username: "PirateKing", email: "Luffy@strawhats.com", password: "password")
 naruto = User.create!(username: "Lord_Seventh", email: "Naruto@konoha.gov", password: "password")
 ichigo = User.create!(username: "Getsuga_Tensho", email: "Ichigo@soul.society.org", password: "password")
 
+Photo.destroy_all
 
-demo_photo_1 = Photo.create!(user_id: 1, title:"test1", description:"this is a test")
-demo_photo_2 = Photo.create!(user_id: 1, title:"test2", description:"this is a test")
-demo_photo_3 = Photo.create!(user_id: 1, title:"test3", description:"this is a test")
-demo_photo_4 = Photo.create!(user_id: 1, title:"test4", description:"this is a test")
-demo_photo_5 = Photo.create!(user_id: 1, title:"test5", description:"this is a test")
+demo_photo_1 = Photo.create!(user_id: 1, title:"Fullmetal Family", description:"Family Photo!")
+demo_photo_2 = Photo.create!(user_id: 1, title:"Moshi Moshi", description:"Important call")
+demo_photo_3 = Photo.create!(user_id: 1, title:"Mask Off", description:"Im gonna need a new mask")
+demo_photo_4 = Photo.create!(user_id: 1, title:"Class 1A", description:"Peace!!")
+demo_photo_5 = Photo.create!(user_id: 1, title:"Its a Trap", description:"The bodies were fake -_-")
 
-luffy_photo_1 = Photo.create!(user_id: 2, title: "The best nakama in the sea 1", description: "Selfie with the crew before setting out on a new adventure")
-luffy_photo_2 = Photo.create!(user_id: 2, title: "The best nakama in the sea 2", description: "Selfie with the crew before setting out on a new adventure")
-luffy_photo_3 = Photo.create!(user_id: 2, title: "The best nakama in the sea 3", description: "Selfie with the crew before setting out on a new adventure")
-luffy_photo_4 = Photo.create!(user_id: 2, title: "The best nakama in the sea 4", description: "Selfie with the crew before setting out on a new adventure")
-luffy_photo_5 = Photo.create!(user_id: 2, title: "The best nakama in the sea 5", description: "Selfie with the crew before setting out on a new adventure")
+luffy_photo_1 = Photo.create!(user_id: 2, title: "The best nakama in the sea", description: "Selfie with the crew before setting out on a new adventure")
+luffy_photo_2 = Photo.create!(user_id: 2, title: "Saiyan Family", description: "All of earth's saiyan together in one place")
+luffy_photo_3 = Photo.create!(user_id: 2, title: "Samurai X", description: "The name is Rurouni Kenshin")
+luffy_photo_4 = Photo.create!(user_id: 2, title: "Strongest Butler", description: "Sebastian is always so secretive")
+luffy_photo_5 = Photo.create!(user_id: 2, title: "Flamy Ink", description: "Ogun Montgomery going ALL OUT!!")
 
-naruto_photo_1 = Photo.create!(user_id: 3, title: "Good old days 1", description: "My favorite picture of good old team 7")
-naruto_photo_2 = Photo.create!(user_id: 3, title: "Good old days 2", description: "My favorite picture of good old team 7")
-naruto_photo_3 = Photo.create!(user_id: 3, title: "Good old days 3", description: "My favorite picture of good old team 7")
-naruto_photo_4 = Photo.create!(user_id: 3, title: "Good old days 4", description: "My favorite picture of good old team 7")
-naruto_photo_5 = Photo.create!(user_id: 3, title: "Good old days 5", description: "My favorite picture of good old team 7")
+naruto_photo_1 = Photo.create!(user_id: 3, title: "Good old days", description: "My favorite picture of good old team 7")
+naruto_photo_2 = Photo.create!(user_id: 3, title: "Delicious!", description: "Rengoku enjoying lunch")
+naruto_photo_3 = Photo.create!(user_id: 3, title: "Inuyasha & Kagome", description: "Get you someone who looks at you like this!")
+naruto_photo_4 = Photo.create!(user_id: 3, title: "The Moves", description: "Itadori and his signature dance move")
+naruto_photo_5 = Photo.create!(user_id: 3, title: "Photobomb", description: "Kid getting photobombed")
 
 ichigo_photo_1 = Photo.create!(user_id: 4, title: "Soul Society Sunset 1", description: "Captured the sun as it set on the soul society")
-ichigo_photo_2 = Photo.create!(user_id: 4, title: "Soul Society Sunset 2", description: "Captured the sun as it set on the soul society")
-ichigo_photo_3 = Photo.create!(user_id: 4, title: "Soul Society Sunset 3", description: "Captured the sun as it set on the soul society")
-ichigo_photo_4 = Photo.create!(user_id: 4, title: "Soul Society Sunset 4", description: "Captured the sun as it set on the soul society")
-ichigo_photo_5 = Photo.create!(user_id: 4, title: "Soul Society Sunset 5", description: "Captured the sun as it set on the soul society")
+ichigo_photo_2 = Photo.create!(user_id: 4, title: "Goals", description: "The AOT gang finaly made it to the beach")
+ichigo_photo_3 = Photo.create!(user_id: 4, title: "Girl Power", description: "Girl's get it done!")
+ichigo_photo_4 = Photo.create!(user_id: 4, title: "First Big Game", description: "Hinata Shōyō, looking as nervous as ever")
+ichigo_photo_5 = Photo.create!(user_id: 4, title: "Checkmate", description: "As usual, Lelouch with the win")
 
 require 'open-uri'
 
