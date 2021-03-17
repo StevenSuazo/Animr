@@ -8,7 +8,7 @@ class PhotosIndexItem extends React.Component {
 
     render() {
         const { photo, username } = this.props;
-        debugger
+
         return (
             <div className="photo-item">
                 <Link to={`/photos/${photo.id}`}>
