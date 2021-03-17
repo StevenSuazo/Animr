@@ -1,19 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 
 User.destroy_all
+Photo.destroy_all
 
 demo = User.create!(username: "Demo", email: "demo@appAcademy.com", password: "password")
 luffy = User.create!(username: "PirateKing", email: "Luffy@strawhats.com", password: "password")
 naruto = User.create!(username: "Lord_Seventh", email: "Naruto@konoha.gov", password: "password")
 ichigo = User.create!(username: "Getsuga_Tensho", email: "Ichigo@soul.society.org", password: "password")
 
-Photo.destroy_all
 
 demo_photo_1 = Photo.create!(user_id: 1, title:"Fullmetal Family", description:"Family Photo!")
 demo_photo_2 = Photo.create!(user_id: 1, title:"Moshi Moshi", description:"Important call")
@@ -39,7 +33,6 @@ ichigo_photo_3 = Photo.create!(user_id: 4, title: "Girl Power", description: "Gi
 ichigo_photo_4 = Photo.create!(user_id: 4, title: "First Big Game", description: "Hinata Shōyō, looking as nervous as ever")
 ichigo_photo_5 = Photo.create!(user_id: 4, title: "Checkmate", description: "As usual, Lelouch with the win")
 
-require 'open-uri'
 
 demo_photo_1.picture.attach(io: File.open("/Users/iawesome_sr/appAcademy/fullstack_project/demo_photo_1.jpg"), filename: "demo_photo_1.jpg")
 demo_photo_2.picture.attach(io: File.open("/Users/iawesome_sr/appAcademy/fullstack_project/demo_photo_2.jpg"), filename: "demo_photo_2.jpg")
