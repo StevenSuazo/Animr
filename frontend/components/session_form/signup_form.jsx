@@ -38,6 +38,10 @@ class SignUpForm extends React.Component {
     );
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  };
+
   toggleHidePass(event) {
     event.preventDefault();
     let pass = document.getElementsByClassName('pinput');
