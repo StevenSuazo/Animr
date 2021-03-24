@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaCloudUploadAlt } from 'react-icons/fa';
+import { FaCloudUploadAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const NavBar = ({ currentUser, logout }) => {
   const NavBarIn = () => {
@@ -26,6 +26,12 @@ const NavBar = ({ currentUser, logout }) => {
                 <i className="fa-cloud-upload-alt"><FaCloudUploadAlt size="40px" /></i>
               </Link>
               <Link to="/login" className="logout-link" onClick={logout}>Log Out</Link>
+              <a href='https://github.com/stevensuazo'>
+                <i className="social-links-linked"> <FaLinkedin size="25px" /> </i>
+              </a>
+              <a href={`https://www.linkedin.com/in/steven-suazo-b71394143/`}>
+                <i className="social-links-git"> <FaGithub size="25px" /> </i>
+              </a>
             </div>
           </div>
         </nav>
@@ -45,6 +51,12 @@ const NavBar = ({ currentUser, logout }) => {
             <div className="navbar-right-out">
               <Link to='/login' className="login-link">Log In</Link>
               <Link to='/signup' className="signup-link">Sign Up</Link>
+              <a href='https://github.com/stevensuazo'>
+                <i className="social-links-linked"> <FaLinkedin size="25px" /> </i>
+              </a>
+              <a href={`https://www.linkedin.com/in/steven-suazo-b71394143/`}>
+                <i className="social-links-git"> <FaGithub size="25px" /> </i>
+              </a>
             </div>
           </div>
         </nav>

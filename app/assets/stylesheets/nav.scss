@@ -26,6 +26,27 @@
 
 }
 
+.social-links-linked {
+  display: flex;
+  position: absolute;
+  flex-direction: column-reverse;
+  margin-left: 20px;
+  font-size: 25px;
+  transition: ease .3s;
+  cursor: pointer;
+  color: #979797;
+}
+
+.social-links-git {
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 20px;
+  font-size: 25px;
+  transition: ease .3s;
+  cursor: pointer;
+  color: #979797;
+}
+
 .logout-link:hover {
   color: #888888;
 }
