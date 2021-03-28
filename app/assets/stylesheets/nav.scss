@@ -34,7 +34,7 @@
   font-size: 25px;
   transition: ease .3s;
   cursor: pointer;
-  color: #979797;
+  color: white;
 }
 
 .social-links-git {
@@ -44,12 +44,22 @@
   font-size: 25px;
   transition: ease .3s;
   cursor: pointer;
-  color: #979797;
+  color: white;
 }
 
+.social-links-linked:hover,
+.social-links-git:hover,
 .logout-link:hover {
   color: #888888;
 }
+
+// .social-links-git:hover {
+//   color: #888888;
+// }
+
+// .logout-link:hover {
+//   color: #888888;
+// }
 
 .nav-bar-logged-in{
   position: relative;
