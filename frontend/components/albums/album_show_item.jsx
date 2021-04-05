@@ -7,12 +7,13 @@ class AlbumShowItem extends React.Component {
     }
 
     render() {
-        const { photo, photos, username, albumId } = this.props;
+        const { photo, photos, username } = this.props;
         return (
             <div className="photo-item">
-                <Link to={`/photos/${photo.id}/`}>
-                    <img src={photos[photo.id].pictureUrl} alt={photo.description} />
-                </Link>
+                {photos[photo.id].pictureUrl ? 
+                    <Link to={`/photos/${photo.id}/`}>
+                        <img src={photos[photo.id].pictureUrl} alt={photo.description} />
+                    </Link> : null}
                 <div className="photo-overlay">
                     <p className="photo-title">{photo.title}</p>
                     <Link className="photo-user-link" to={`/photos/${photo.user_id}`}>

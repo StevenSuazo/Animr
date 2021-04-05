@@ -10,9 +10,10 @@ class UserShowItem extends React.Component {
         const { photo, username } = this.props;
         return (
             <div className="photo-item">
-                <Link to={`/photos/${photo.id}`}>
-                    <img src={photo.pictureUrl} alt={photo.description} />
-                </Link>
+                {photo.pictureUrl ?
+                    <Link to={`/photos/${photo.id}/`}>
+                        <img src={photo.pictureUrl} alt={photo.description} />
+                    </Link> : null}
                 <div className="photo-overlay">
                     <p className="photo-title">{photo.title}</p>
                     <Link className="photo-user-link" to={`/users/${photo.user_id}`}>
