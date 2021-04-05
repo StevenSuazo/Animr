@@ -17,7 +17,7 @@ class UserShowAlbum extends React.Component {
         const { currentUser, album, photos } = this.props;
 
         const style = {
-            backgroundImage: 'url(' + (photos[album.photos[0].id - 1].pictureUrl ? photos[album.photos[0].id - 1].pictureUrl : null) + ')'
+            backgroundImage: 'url(' + photos[0].pictureUrl + ')'
         }
 
         const albumDelete = album && album.user_id == currentUser.id ? (
