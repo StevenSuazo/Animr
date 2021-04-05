@@ -17,7 +17,7 @@ class UserShowAlbum extends React.Component {
         const { currentUser, album, photos } = this.props;
 
         const style = {
-            backgroundImage: 'url(' + photos[album.photo_ids[0] - 1].pictureUrl + ')'
+            backgroundImage: 'url(' + (photos[album.photos[0].id - 1].pictureUrl ? photos[album.photos[0].id - 1].pictureUrl : null) + ')'
         }
 
         const albumDelete = album && album.user_id == currentUser.id ? (
@@ -37,7 +37,7 @@ class UserShowAlbum extends React.Component {
         } else {
             numPhotos = "photos";
         }
-
+        debugger
         return (
             <div className="album-item" style={photos.length > 1 ? style : null}>
                 <Link to={`/users/${currentUser.id}/albums/${album.id}`}>
