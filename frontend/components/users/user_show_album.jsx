@@ -38,7 +38,6 @@ class UserShowAlbum extends React.Component {
         } else {
             numPhotos = "photos";
         }
-        debugger
         return (
             <div className="album-item" style={photos[album.photos[0].id - 1] ? style : null}>
                 <Link to={`/users/${currentUser.id}/albums/${album.id}`}>

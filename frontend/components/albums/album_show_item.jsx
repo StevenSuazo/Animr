@@ -8,7 +8,6 @@ class AlbumShowItem extends React.Component {
 
     render() {
         const { photo, photos, username } = this.props;
-        debugger
         return (
             <div className="photo-item">
                 {photos[photo.id].pictureUrl ? 

@@ -13,7 +13,7 @@ class AlbumShow extends React.Component {
     }
 
     render() {
-        const { photos, album, currentUser } = this.props;
+        const { photos, album, users, currentUser } = this.props;
 
         if (album) {
             const style = {
@@ -50,7 +50,7 @@ class AlbumShow extends React.Component {
                                 <p className="num-photos">{album.photos.length} {numPhotos}</p>
                             </div>
                             <div className="album-return-link">
-                                <Link to={`/users/${album.user_id}`}> By: {currentUser.username}</Link>
+                                <Link to={`/users/${album.user_id}`}> By: {users[album.user_id].username}</Link>
                             </div>
                         </div>
                     </div>
