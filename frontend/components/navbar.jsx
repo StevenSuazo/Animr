@@ -25,7 +25,7 @@ const NavBar = ({ currentUser, logout }) => {
               <Link to="/upload">
                 <i className="fa-cloud-upload-alt"><FaCloudUploadAlt size="40px" /></i>
               </Link>
-              <Link to="/login" className="logout-link" onClick={logout}>Log Out</Link>
+              <Link to="/upload" className="logout-link" onClick={logout}>Log Out</Link>
               <a href='https://github.com/stevensuazo'>
                 <i className="social-links-linked"> <FaLinkedin size="25px" /> </i>
               </a>
