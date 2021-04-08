@@ -19,7 +19,8 @@ The Explore page is able to load all the photos on the database and have them fi
 ### Show Password Toggle
 
 ![Feature 1](https://github.com/StevenSuazo/Animr/blob/main/app/assets/images/feature2.png)
-```  toggleHidePass(event) {
+```
+  toggleHidePass(event) {
     event.preventDefault();
     let pass = document.getElementsByClassName('pinput');
     if (pass[0].type === "text") {
