@@ -27,7 +27,11 @@ class UserShow extends React.Component {
         this.handleTabs();
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps) {
+        if (this.props.photos.length !== prevProps.photos.length) {
+            this.props.getPhotos();
+        }
+
         let tabsClasses = document.querySelectorAll(".user-show-tab");
         tabsClasses.forEach(tab => {
             tab.classList.remove("selected");

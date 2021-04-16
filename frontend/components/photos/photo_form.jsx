@@ -1,7 +1,6 @@
 import React from 'react';
 import PhotoFormItem from './photo_form_item';
 import { FcAddImage, FcRemoveImage } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
 
 class PhotoForm extends React.Component {
     constructor(props) {
@@ -163,11 +162,10 @@ class PhotoForm extends React.Component {
                             </button>
                         </div>
                     </div>
-                    <Link
-                        to="/"
+                    <button
                         className="upload-button"
                         onClick={this.handleSubmit}
-                    >{submitButtonText}</Link>
+                    >{submitButtonText}</button>
                 </div>
                 <form className="upload-display" onClick={this.deselectAll}>
                     {centerAddPhoto}
