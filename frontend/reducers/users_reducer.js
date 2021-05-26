@@ -1,22 +1,8 @@
-// import { merge } from 'lodash';
-// import { RECEIVE_CURRENT_USER} from '../actions/session_actions';
-
-// const usersReducer = (oldState = {}, action) => {
-//   Object.freeze(oldState);
-//   switch (action.type) {
-//     case RECEIVE_CURRENT_USER:
-//       return merge({}, oldState, { [action.currentUser.id]: action.currentUser });
-//     default:
-//       return oldState;
-//   }
-// };
-
-// export default usersReducer;
-
 import { RECEIVE_CURRENT_USER } from './../actions/session_actions';
 import { RECEIVE_ALL_USERS } from './../actions/user_actions';
 
 const usersReducer = (state = {}, action) => {
+  debugger
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_USERS:
@@ -25,6 +11,7 @@ const usersReducer = (state = {}, action) => {
       users.forEach(user => {
         newState[user.id] = user;
       });
+      debugger
       return newState;
     case RECEIVE_CURRENT_USER:
       return Object.assign({}, state, { [action.user.id]: action.user });
